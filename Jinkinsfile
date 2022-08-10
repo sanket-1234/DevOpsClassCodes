@@ -4,11 +4,13 @@ pipeline {
         stage ('build') {
             steps {
                 echo " Building"
+                sh 'maven compile'
             }
         }
-        stage ('package') {
+        stage ('test') {
             steps {
-                echo "package"
+                echo "Test"
+                sh 'test'
             }
         }
     }
